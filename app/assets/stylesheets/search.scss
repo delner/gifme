@@ -1,0 +1,98 @@
+@import "constants";
+
+// Styles for search#index
+.image-list {
+  // Using a flexbox here makes rendering an image grid super-easy
+  // It is, however, fairly new. Works in IE10+, FF, Chrome and Safari 7+.
+  // IE 10-11 styles
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-pack: center;
+  // Safari 7 styles
+  display: -webkit-flex;
+  -webkit-flex: 0 1 auto;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: center;
+  // Styles for evertything else
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .image-list { margin: 0 1em; }
+}
+.image-thumb {
+  margin: 0.1em;
+  overflow: hidden;
+
+  // For filling container with image
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  display: -webkit-flex;
+  -webkit-flex: 0 1 auto;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  img {
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%
+  }
+}
+
+// Styles for search#view
+.image-view {
+  width: 100%;
+  text-align: center;
+}
+.image {
+  width: 100%;
+  text-align: center;
+  img { width: 100%; }
+}
+.image-attributes {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
+.attr-name { font-weight: bold; }
+.random-button {
+  margin: 1em auto;
+  font-size: 1.3em;
+}
+
+/* Small phone styles */
+@media (max-width: $large-phone-breakpoint) {
+  .image-thumb {
+    width: 100%;
+    height: 200px;
+  }
+  .image img { width: 100%; }
+  .random-button { width: 100%; }
+}
+/* Large phone styles */
+@media (min-width: $large-phone-breakpoint) {
+  .image-thumb {
+    width: 300px;
+    height: 200px;
+  }
+  .image img { width: 500px; }
+}
+/* Tablet phone styles */
+@media (min-width: $tablet-breakpoint) {
+  .image-thumb {
+    width: 360px;
+    height: 240px;
+  }
+  .image img { width: 640px; }
+}
+/* Desktop styles */
+@media (min-width: $desktop-breakpoint) {
+  .image-thumb {
+    width: 400px;
+    height: 264px;
+  }
+  .image img { width: 768px; }
+}

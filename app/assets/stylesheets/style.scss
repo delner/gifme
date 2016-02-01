@@ -1,0 +1,19 @@
+@import "constants";
+
+// Some application-wide styles
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  color: $colorText;
+}
+
+a {
+  color: $colorPrimary;
+}
+
+button {
+  color: white;
+  background-color: $colorPrimary;
+  border: 1px solid $colorPrimaryLight;
+  padding: 0.5em 1em;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GIFME - It's kinda like Giphy</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,800' rel='stylesheet' type='text/css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= react_component('NavBar', {searchTerm: @search_term}) %>
+    <div class="content">
+      <%= react_component('LoadingSpinner') %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

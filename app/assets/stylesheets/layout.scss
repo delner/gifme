@@ -1,0 +1,105 @@
+@import "constants";
+
+// These are styles for our main layout (header, etc)
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-bottom: 1px solid gray;
+  background-color: white;
+
+  font-size: 2em;
+
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  -ms-flex-align: center;
+  display: -webkit-flex;
+  -webkit-flex: 0 1 auto;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  margin-right: 0.5em;
+  .accent {
+    font-size: 1em;
+    font-weight: 800;
+  }
+  .accent:nth-child(1) { color: $colorPrimary; }
+  .accent:nth-child(2) { color: $colorSecondary; }
+  .accent:nth-child(3) { color: $colorTertiary; }
+}
+.search-bar {
+  -webkit-flex-grow: 2;
+  flex-grow: 2;
+
+  &:focus {
+    border: 2px solid $colorPrimaryLight;
+  }
+  label {
+    position: relative;
+    left: 1.2em;
+    font-size: 0.65em;
+    color: $colorGrayscaleLight;
+  }
+  input {
+    margin-bottom: 0.3em;
+    font-size: 0.70em;
+    padding-left: 1.4em;
+  }
+}
+.content {
+  margin-top: 4em;
+}
+
+.loading {
+  display: none;
+  margin-top: 30%;
+  color: $colorTextFaded;
+  font-size: 1.5em;
+  text-align: center;
+  .spinner {
+    margin-top: 20%;
+    .earth { font-size: 3em; }
+    .orbit {
+      position: relative;
+      left: -2em;
+      top: -0.75em;
+      animation-name: orbit;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+    }
+  }
+}
+
+// Animations
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(2.5em) rotate(135deg); }
+  to { transform: rotate(360deg) translateX(2.5em) rotate(135deg); }
+}
+
+/* Small phone styles */
+@media (max-width: $large-phone-breakpoint) {
+  .search-bar input { width: 60%; }
+}
+/* Large phone styles */
+@media (min-width: $large-phone-breakpoint) {
+  .search-bar input { width: 70%; }
+}
+/* Tablet phone styles */
+@media (min-width: $tablet-breakpoint) {
+  .search-bar input { width: 75%; }
+}
+/* Desktop styles */
+@media (min-width: $desktop-breakpoint) {
+  .nav-bar { font-size: 3em; }
+  .content { margin-top: 5em; }
+}

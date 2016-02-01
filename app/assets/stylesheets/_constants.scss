@@ -1,0 +1,20 @@
+// Layout
+// --------------------------
+$small-phone-breakpoint: 320px;
+$large-phone-breakpoint: 640px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Theme colors
+// --------------------------------------------------
+$colorPrimary: #EB972F;
+$colorPrimaryLight: lighten($colorPrimary, 15%);
+$colorSecondary: #A33DCC;
+$colorSecondaryLight: lighten($colorSecondary, 15%);
+$colorTertiary: #0CC99E;
+$colorTertiaryLight: lighten($colorTertiary, 15%);
+$colorOffwhite: #EEEEEE;
+$colorGrayscaleLight: #AAAAAA;
+$colorGrayscaleDark: #424242;
+$colorText: $colorGrayscaleDark;
+$colorTextFaded: $colorGrayscaleLight;
